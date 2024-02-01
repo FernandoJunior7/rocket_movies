@@ -1,8 +1,12 @@
 const { Router } = require('express');
 
-const notesRoutes = Router();
+const usersRoutes = Router();
 
-notesRoutes.post('/', () => console.log('opa, sou a raiz do caminho users'));
-notesRoutes.put('/:id', () => console.log('opa, to atualizando as informações do usuário via id'));
+usersRoutes.post('/', (request, response) => response.json({
+  "message": "opa, tudo bom? Sou a raiz do projeto"
+}));
+usersRoutes.put('/:id', (request, response) => response.json({
+  "message": "opa, tudo bom? To atualizando um usuário"
+}));
 
-module.exports = notesRoutes;
+module.exports = usersRoutes;
